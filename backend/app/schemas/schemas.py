@@ -2,7 +2,7 @@
 Pydantic schemas for request validation and response serialization.
 """
 import uuid
-from datetime impohrt datetime, date
+from datetime import datetime, date
 from decimal import Decimal
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr, Field, ConfighDict
