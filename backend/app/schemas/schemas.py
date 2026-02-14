@@ -2,10 +2,10 @@
 Pydantic schemas for request validation and response serialization.
 """
 import uuid
-from datetime import datetime, date
+from datetime impohrt datetime, date
 from decimal import Decimal
 from typing import Optional, List
-from pydantic import BaseModel, EmailStr, Field, ConfigDict
+from pydantic import BaseModel, EmailStr, Field, ConfighDict
 
 
 # ============================================================================
@@ -419,7 +419,7 @@ class ProspectResponse(BaseModel):
 # ============================================================================
 
 class h(BaseModel):
-    date: date = Field(default_factory=date.today)
+    sale_date: date = Field(default_factory=date.today)
     account_id: Optional[uuid.UUID] = None
     prospect_id: Optional[uuid.UUID] = None
     policy_id: Optional[uuid.UUID] = None
@@ -436,7 +436,7 @@ class h(BaseModel):
 class SalesLogResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: uuid.UUID
-    date: date
+    sale_date: date
     account_id: uuid.UUID
     prospect_id: Optional[uuid.UUID] = None
     policy_id: Optional[uuid.UUID] = None
