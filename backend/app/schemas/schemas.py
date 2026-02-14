@@ -1,6 +1,7 @@
 """
 Pydantic schemas for request validation and response serialization.
 """
+from __future__ import annotations
 import uuid
 from datetime import datetime, date
 from decimal import Decimal
@@ -9,7 +10,7 @@ from pydantic import BaseModel, EmailStr, Field, ConfigDict
 
 
 # ============================================================================
-# AUTH
+# AUTHh
 # ============================================================================
 
 class LoginRequest(BaseModel):
