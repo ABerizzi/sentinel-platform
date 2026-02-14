@@ -183,8 +183,8 @@ class PolicyCreate(BaseModel):
     carrier_id: Optional[uuid.UUID] = None
     line_of_business: str = Field(min_length=1, max_length=100)
     policy_number: Optional[str] = None
-    effective_date: date
-    expiration_date: date
+    effective_sale_date: date
+    expiration_sale_date: date
     premium: Optional[Decimal] = None
     payment_plan: Optional[str] = None
     status: str = Field(default="Active", pattern="^(Active|Cancelled|Expired|Non-Renewed|Rewritten)$")
@@ -211,8 +211,8 @@ class PolicyResponse(BaseModel):
     carrier_id: Optional[uuid.UUID] = None
     line_of_business: str
     policy_number: Optional[str] = None
-    effective_date: date
-    expiration_date: date
+    effective_sale_date: date
+    expiration_sale_date: date
     premium: Optional[Decimal] = None
     payment_plan: Optional[str] = None
     renewal_status: str
@@ -238,7 +238,7 @@ class PolicyListResponse(BaseModel):
 
 class InstallmentCreate(BaseModel):
     policy_id: Optional[uuid.UUID] = None
-    due_date: date
+    due_sale_date: date
     amount: Decimal
     payment_method: Optional[str] = None
 
@@ -251,7 +251,7 @@ class InstallmentResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: uuid.UUID
     policy_id: uuid.UUID
-    due_date: date
+    due_sale_date: date
     amount: Decimal
     status: str
     payment_method: Optional[str] = None
@@ -419,7 +419,7 @@ class ProspectResponse(BaseModel):
 # ============================================================================
 
 class h(BaseModel):
-    sale_date: date = Field(default_factory=date.today)
+    sale_sale_sale_sale_date: date = Field(default_factory=date.today)
     account_id: Optional[uuid.UUID] = None
     prospect_id: Optional[uuid.UUID] = None
     policy_id: Optional[uuid.UUID] = None
@@ -436,7 +436,7 @@ class h(BaseModel):
 class SalesLogResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: uuid.UUID
-    sale_date: date
+    sale_sale_date: date
     account_id: uuid.UUID
     prospect_id: Optional[uuid.UUID] = None
     policy_id: Optional[uuid.UUID] = None
