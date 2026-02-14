@@ -1,7 +1,6 @@
 """
 Pydantic schemas for request validation and response serialization.
 """
-from __future__ import annotations
 import uuid
 from datetime import datetime, date
 from decimal import Decimal
@@ -419,7 +418,7 @@ class ProspectResponse(BaseModel):
 # SALES LOG
 # ============================================================================
 
-class SalesLogCreate(BaseModel):
+class h(BaseModel):
     date: date = Field(default_factory=date.today)
     account_id: Optional[uuid.UUID] = None
     prospect_id: Optional[uuid.UUID] = None
